@@ -1,78 +1,48 @@
 import React from "react";
-import { Input } from "../../components/input";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { validationSchema } from "../../lib/validationSchema";
+import { useGetCategory } from "./service/query/useGetCategory";
+import { CategoryCard } from "./components/category-card/category-card";
+import { useGetAllData } from "./service/query/useGetAllData";
+import { ProductCard } from "../../components/product-card/product-card";
 export const Home = () => {
-  const {
-    handleSubmit,
-    reset,
-    register,
-    formState: { errors },
-  } = useForm({
-    resolver: zodResolver(validationSchema),
-  });
-  const submit = (data) => {
-    console.log(data);
-  };
+  const [page, setPage] = React.useState(1);
+  const { data, isLoading } = useGetCategory();
+  const { data: allData } = useGetAllData(page);
+  const pageSize = [...Array(allData?.pageSize)].fill(null);
+
   return (
-    <div className="container mb-3">
-      <form onSubmit={handleSubmit(submit)}>
-        <Input
-          error={errors.firstName}
-          placeholder={"user name"}
-          label={"user"}
-          id="3"
-          type={"text"}
-          {...register("firstName")}
-        />
-        <Input
-          error={errors.lastName}
-          placeholder={"last name"}
-          label={"last name"}
-          id="5"
-          type={"text"}
-          {...register("lastName")}
-        />
-        <Input
-          error={errors.email}
-          placeholder={"email"}
-          label={"email"}
-          id="8"
-          type={"text"}
-          {...register("email")}
-        />
-        <Input
-          error={errors.ticketLink}
-          placeholder={"img link"}
-          label={"img link"}
-          id="10"
-          type={"text"}
-          {...register("ticketLink")}
-        />
-        <Input
-          error={errors.password}
-          label={"password"}
-          id="33"
-          type={"password"}
-          {...register("password")}
-        />
-        <Input
-          error={errors.confirmPassword}
-          label={"confirmPassword"}
-          id="35"
-          type={"password"}
-          {...register("confirmPassword")}
-        />
-        <div>
-          <button
-            type="submit"
-            className="mt-4 border border-l-pink-500 p-2 text-base"
-          >
-            submit
-          </button>
+    <>
+      <section className="pb-[56px] pt-9">
+        <div className="container mb-3">
+          <h2 className="mb-6 text-2xl font-semibold text-black-out">
+            Kategoriyalar
+          </h2>
+          <div className="flex flex-wrap items-center gap-9">
+            {data?.map((item) => (
+              <CategoryCard key={item.id} {...item} />
+            ))}
+          </div>
         </div>
-      </form>
-    </div>
+      </section>
+      <section className="bg-cascading-white pb-14 pt-8">
+        <div className="container">
+          <div className=" mb-10 flex flex-wrap items-center gap-5">
+            {allData?.data.map((item) => (
+              <ProductCard key={item.id} {...item} />
+            ))}
+          </div>
+          <div className="flex items-center justify-center gap-2">
+            {pageSize?.map((item, i) => (
+              <button
+                onClick={() => setPage(i + 1)}
+                key={i}
+                className={`rounded-lg border border-primary px-[15px] py-[11px] text-lg text-primary ${page == i + 1 ? "font-semibold" : "font-light"}`}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };

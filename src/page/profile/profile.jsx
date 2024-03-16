@@ -45,14 +45,14 @@ export const Profile = () => {
     });
   };
   const newPage = () => {
-    setUserData(true), setEdit(false);
+    setEdit(false);
   };
   return (
     <section className="bg-cascading-white py-[25px]">
       <div className="container">
         {!edit && (
           <div className="mx-auto w-full max-w-[80%] bg-white p-8">
-            <h2 className="text-dark-void mb-6 text-xl font-medium">
+            <h2 className="mb-6 text-xl font-medium text-dark-void">
               Profil ma‘lumotlari
             </h2>
             <div>
@@ -119,7 +119,7 @@ export const Profile = () => {
             </div>
           </div>
         )}
-        {/* {welcome && (
+        {edit && (
           <div className="mx-auto w-full max-w-[407px] rounded-lg bg-white p-8 shadow-sm shadow-[#00000079]">
             <button>
               <ArrowLeftIcon />
@@ -135,9 +135,9 @@ export const Profile = () => {
               Davom etish
             </Button>
           </div>
-        )} */}
+        )}
 
-        {edit && (
+        {/* {edit && (
           <div className="mx-auto w-full max-w-[80%] rounded-lg bg-white p-8 shadow-sm shadow-[#00000079]">
             <div className="mb-6 flex items-center justify-between">
               <h2 className="text-dark-void  text-xl font-medium">
@@ -169,7 +169,7 @@ export const Profile = () => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </section>
   );

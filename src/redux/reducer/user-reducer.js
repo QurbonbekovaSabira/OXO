@@ -5,8 +5,7 @@ const initialState = loadState("user") || {
   likes: [],
   product: [],
 };
-
-export const userReduser = createSlice({
+ const userReduser = createSlice({
   name: "userReduser",
   initialState,
   reducers: {

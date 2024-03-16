@@ -3,7 +3,7 @@ import { requst } from "../../../../config/request";
 
 export const useGetUser = () => {
   return useMutation({
-    mutationKey: "useCreateUser",
+    mutationKey: ["useCreateUser"],
     mutationFn: (data) => requst.post(`/login`, data).then((res) => res.data),
   });
 };

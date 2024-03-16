@@ -36,7 +36,7 @@ export const Login = () => {
         Cookies.set("user", res.accessToken);
         dispatch(add({ ...res.user }));
         reset();
-        navigate("/");
+        navigate("/user/edit");
       },
       onError: (error) => {
         console.log(error);
@@ -50,7 +50,7 @@ export const Login = () => {
         Cookies.set("user", res.accessToken);
         dispatch(add({ ...res.user }));
         reset();
-        navigate("/");
+        navigate("/user/edit");
       },
       onError: (error) => {
         console.log(error);
@@ -63,13 +63,13 @@ export const Login = () => {
         <div className="mb-[36px] grid grid-cols-2 ">
           <button
             onClick={() => setLogin(false)}
-            className={`text-dark-void rounded border-b-[4px] pb-2 text-base font-semibold ${!login ? "border-primary" : "border-jupiter"}`}
+            className={`rounded border-b-[4px] pb-2 text-base font-semibold text-dark-void ${!login ? "border-primary" : "border-jupiter"}`}
           >
             Kirish
           </button>
           <button
             onClick={() => setLogin(true)}
-            className={`text-dark-void flex flex-col gap-2 rounded border-b-[4px] text-base font-semibold ${login ? "border-primary" : "border-jupiter"}`}
+            className={`flex flex-col gap-2 rounded border-b-[4px] text-base font-semibold text-dark-void ${login ? "border-primary" : "border-jupiter"}`}
           >
             Ro’yxatdan o’tish
           </button>

@@ -17,6 +17,7 @@ export const Input = React.forwardRef(
       setState,
       state,
       defaultValue,
+      placeholder,
     },
     ref,
   ) => {
@@ -32,10 +33,11 @@ export const Input = React.forwardRef(
         )}
         <div className="relative">
           <input
+            placeholder={placeholder}
             defaultValue={defaultValue}
             ref={ref}
             className={clsx(
-              `text-black-out w-full rounded-md ${error ? "border-glowing-brake-disc" : "border-primary "} border p-4 text-sm font-normal outline-none`,
+              `w-full rounded-md text-black-out  ${error ? "border-glowing-brake-disc" : "border-primary "} border p-4 text-sm font-normal outline-none`,
               {
                 "border-none": variant == "secondary",
               },
