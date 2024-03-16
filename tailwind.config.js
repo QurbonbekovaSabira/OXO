@@ -15,7 +15,12 @@ export default {
         black: "#000",
         white: "#FFF",
         red: "#EA3838",
+        "glowing-brake-disc": "#eb4444",
         gray: "#888888",
+        jupiter: " #e1e1e1",
+        "cascading-white": "#f6f6f6",
+        "black-out": "#222222",
+        "dark-void": "#131418",
       },
       fontFamily: {
         poppins: "Poppins",

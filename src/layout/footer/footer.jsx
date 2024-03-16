@@ -5,10 +5,10 @@ import logo from "../../assets/img/light.svg";
 export const Footer = () => {
   return (
     <div className="bg-primary py-[35px]">
-      <div className="container mb-[24px] flex justify-between border-b border-white">
-        <div>
+      <div className="container flex justify-between border-b border-white pb-[24px]">
+        <a href="/">
           <img src={logo} alt="logo OXO" />
-        </div>
+        </a>
         <div className=" flex flex-col gap-2">
           <a href="#" className="text-sm font-medium text-white">
             Mobil ilovalar
