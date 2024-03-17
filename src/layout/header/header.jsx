@@ -79,14 +79,13 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      {location.pathname !== "/user/create" ||
-        (location.pathname !== "/user/create" && (
-          <div className="bg-cascading-white pb-10 pt-8">
-            <div className="container">
-              <SearchInput />
-            </div>
+      {location.pathname !== "/user/create" && (
+        <div className="bg-cascading-white pb-10 pt-8">
+          <div className="container">
+            <SearchInput />
           </div>
-        ))}
+        </div>
+      )}
     </>
   );
 };

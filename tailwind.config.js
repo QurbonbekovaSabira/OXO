@@ -25,6 +25,10 @@ export default {
         "black-out": " #222222",
         placebo: "#e7e7e7",
         dugong: "#707070",
+        "light-pensive": "#d1d1d6",
+        "wood-charcoal": "#464646",
+        "chefs-hat": "#f2f4f5",
+        ice: "#23E5DB",
       },
       fontFamily: {
         poppins: "Poppins",

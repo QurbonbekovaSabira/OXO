@@ -1,5 +1,5 @@
 import React from "react";
-import { useGetCategory } from "./service/query/useGetCategory";
+import { useGetCategory } from "../../redux/service/useGetCategory";
 import { CategoryCard } from "./components/category-card/category-card";
 import { useGetAllData } from "./service/query/useGetAllData";
 import { ProductCard } from "../../components/product-card/product-card";

@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { add, deleteData } from "../../redux/reducer/like-reducer";
 import { useSelector } from "react-redux";
 import { LikeRedIcon } from "../../assets/icon/like-red-icon";
+import { Link } from "react-router-dom";
 export const ProductCard = (product) => {
   const dispatch = useDispatch();
   const likes = useSelector((state) => state.like);
@@ -19,11 +20,14 @@ export const ProductCard = (product) => {
     dispatch(deleteData(product));
     setLikeData(false);
   };
+
   return (
-    <div className="border-placebo w-full max-w-[168px] rounded border px-1 py-[2px]">
-      <div className="mb-4">
-        <img src={product?.img} alt={product.title} />
-      </div>
+    <div className="w-full max-w-[168px] overflow-hidden rounded border border-placebo px-1 py-[2px]">
+      <Link to={`/product/${product.id}`}>
+        <div className="mb-4 overflow-hidden transition-all duration-700 hover:scale-[1.2]">
+          <img src={product?.img} alt={product.title} />
+        </div>
+      </Link>
       <div>
         <p className="mb-3 text-sm font-normal text-dark-void">
           {product.title}

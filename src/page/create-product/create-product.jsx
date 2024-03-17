@@ -1,5 +1,5 @@
 import React from "react";
-import { useGetCategory } from "../home/service/query/useGetCategory";
+import { useGetCategory } from "../../redux/service/useGetCategory";
 import { validationProductData } from "../../lib/validationProductData";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,7 +9,7 @@ import { usePutProduct } from "./service/mutation/usePutProduct";
 import { Listbox, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { ArrowBottom } from "../../assets/img/arrow-bottom";
-import { useGetBrand } from "./service/query/useGetBrand";
+import { useGetBrand } from "../../redux/service/useGetBrand";
 export const CreateProduct = () => {
   const [selected, setSelected] = React.useState("Bo’limni tanlang");
   const { mutate } = usePutProduct(selected);
@@ -49,7 +49,7 @@ export const CreateProduct = () => {
             <div className=" mb-6">
               <Listbox value={selected} onChange={setSelected}>
                 <div className="relative mt-1">
-                  <Listbox.Button className="border-placebo relative  w-full cursor-default rounded-sm border bg-cascading-white py-2 pl-3 pr-10 text-left  sm:text-sm">
+                  <Listbox.Button className="relative w-full  cursor-default rounded-sm border border-placebo bg-cascading-white py-2 pl-3 pr-10 text-left  sm:text-sm">
                     <div className="flex w-full items-center justify-between">
                       <span className="block truncate">{selected}</span>
                       <ArrowBottom />
@@ -100,7 +100,7 @@ export const CreateProduct = () => {
             <div className="mb-6">
               <Listbox value={selected} onChange={setBrandName}>
                 <div className="relative mt-1">
-                  <Listbox.Button className="border-placebo relative  w-full cursor-default rounded-sm border bg-cascading-white py-2 pl-3 pr-10 text-left  sm:text-sm">
+                  <Listbox.Button className="relative w-full  cursor-default rounded-sm border border-placebo bg-cascading-white py-2 pl-3 pr-10 text-left  sm:text-sm">
                     <div className="flex w-full items-center justify-between">
                       <span className="block truncate">{brandName}</span>
                       <ArrowBottom />
@@ -168,15 +168,15 @@ export const CreateProduct = () => {
                 onChange={(e) => setText(e.target.value.length)}
                 error={errors.desc}
                 name="desc"
-                className={`border-placebo h-[253px] w-full resize-none rounded border p-8 outline-none `}
+                className={`h-[253px] w-full resize-none rounded border border-placebo p-8 outline-none `}
                 aria-label="E’lon haqida batafsil"
               />
             </label>
             <div className="mt-6 flex items-center justify-between">
-              <p className="text-dugong text-base font-normal">
+              <p className="text-base font-normal text-dugong">
                 Yana kamida 80 ta belgi yozing
               </p>
-              <p className="text-dugong text-base font-normal">{text}/9000</p>
+              <p className="text-base font-normal text-dugong">{text}/9000</p>
             </div>
           </div>
           <div className="mb-6 rounded-lg bg-white p-8">

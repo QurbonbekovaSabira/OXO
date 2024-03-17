@@ -13,7 +13,10 @@ import { useDispatch } from "react-redux";
 import { add } from "../../redux/reducer/user-reducer";
 import { WelcomeIcon } from "../../assets/icon/welcome-icon";
 import { ArrowLeftIcon } from "../../assets/icon/arrow-left-icon";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export const Profile = () => {
+  const navigete = useNavigate();
   const dispatch = useDispatch();
   const [confirmP, setConfirmP] = React.useState(false);
   const {
@@ -45,7 +48,7 @@ export const Profile = () => {
     });
   };
   const newPage = () => {
-    setEdit(false);
+    navigete("/");
   };
   return (
     <section className="bg-cascading-white py-[25px]">
@@ -120,7 +123,10 @@ export const Profile = () => {
           </div>
         )}
         {edit && (
-          <div className="mx-auto w-full max-w-[407px] rounded-lg bg-white p-8 shadow-sm shadow-[#00000079]">
+          <div
+            onClick={() => setEdit(false)}
+            className="mx-auto w-full max-w-[407px] rounded-lg bg-white p-8 shadow-sm shadow-[#00000079]"
+          >
             <button>
               <ArrowLeftIcon />
             </button>

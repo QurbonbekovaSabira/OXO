@@ -6,9 +6,14 @@ export const Button = ({ children, type, variant, className, onClick }) => {
       onClick={onClick}
       type={type}
       className={clsx(
-        "flex items-center justify-center gap-[10px] rounded-lg border-none px-[50px] py-[15px] text-xl font-bold",
+        "flex items-center justify-center gap-[10px] ",
         {
-          "rounded-2xl bg-primary  text-white": variant === "primary",
+          "rounded-lg border-none bg-primary  px-[40px] py-[15px] text-xl font-bold  text-white":
+            variant === "primary",
+        },
+        {
+          "rounded border border-black px-5 py-1 text-base font-medium text-black":
+            variant == "secondary",
         },
         className,
       )}
