@@ -27,7 +27,7 @@ export const Profile = () => {
   } = useForm({ resolver: zodResolver(validationSchema) });
   const { user } = useSelector((state) => state);
   const { mutate } = useEditUser(user.user[0].id);
-  const [edit, setEdit] = React.useState(user.user[0].firstName);
+  const [edit, setEdit] = React.useState(false);
   const [state, setState] = React.useState();
   const submit = (editData) => {
     const data = {

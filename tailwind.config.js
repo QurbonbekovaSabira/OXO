@@ -21,7 +21,7 @@ export default {
         jupiter: " #e1e1e1",
         "cascading-white": "#f6f6f6",
         "white-edgar": " #ededed ",
-        "black-out": "#222222",
+        "black-out": "#222222", 
         "dark-void": "#131418",
         "coarse-wool": "#181d27",
         "black-out": " #222222",

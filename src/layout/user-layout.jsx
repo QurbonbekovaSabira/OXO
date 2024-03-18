@@ -1,10 +1,10 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { loadState } from "../lib/storage";
+import Cookies from "js-cookie";
 export const UserLayout = () => {
-  const { user } = useSelector((state) => state);
-  if (!user.user.length) return <Navigate to="/" replace />;
+  const token = Cookies.get("user");
+  if (!token) return <Navigate to="/" replace />;
   return (
     <div>
       <Outlet />
