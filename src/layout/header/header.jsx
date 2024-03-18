@@ -11,7 +11,7 @@ export const Header = () => {
   const like = useSelector((state) => state.like);
   const location = useLocation();
   console.log(location.pathname);
-  //
+
   return (
     <>
       <div className=" mb-[90px] ">
@@ -79,13 +79,14 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      {location.pathname !== "/user/create" && (
-        <div className="bg-cascading-white pb-10 pt-8">
-          <div className="container">
-            <SearchInput />
+      {location.pathname !== "/user/create" ||
+        (location.pathname !== "/user/:name" && (
+          <div className="bg-cascading-white pb-10 pt-8">
+            <div className="container">
+              <SearchInput />
+            </div>
           </div>
-        </div>
-      )}
+        ))}
     </>
   );
 };

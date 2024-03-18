@@ -31,7 +31,7 @@ export const SinglePage = () => {
     setLike(likeData?.some((item) => item.id === id));
   }, [id]);
   const notify = () => toast("Xabar muvaffaqiyatli jo'natildi!");
-  console.log(userProduct.data);
+  console.log(userProduct?.data);
   const deleteLike = () => {
     dispatch(deleteData(data));
     setLike(false);
@@ -77,14 +77,14 @@ export const SinglePage = () => {
               <p className="mb-4 text-2xl font-bold text-red">
                 {data?.price} UYE
               </p>
-              <p className="border-light-pensive mb-4 inline-block rounded border px-3 py-1 text-base font-normal">
+              <p className="mb-4 inline-block rounded border border-light-pensive px-3 py-1 text-base font-normal">
                 Holati: {data?.status}
               </p>
               <h3 className="mb-4 text-2xl font-medium">Tavsifi</h3>
               <p className="mb-[50px] px-1 text-sm font-normal text-dark-void">
                 {data?.desc}
               </p>
-              <span className="bg-wood-charcoal mb-5 block h-[1px]"></span>
+              <span className="mb-5 block h-[1px] bg-wood-charcoal"></span>
               <div className="flex items-center justify-between">
                 <p className="text-sm font-normal">ID: 41240834</p>
                 <div className="flex items-center gap-2">
@@ -122,7 +122,7 @@ export const SinglePage = () => {
                       href={`mailto:${userData?.email}`}
                       className="flex items-center gap-2"
                     >
-                      <div className="bg-ice flex items-center justify-center rounded-full p-1">
+                      <div className="flex items-center justify-center rounded-full bg-ice p-1">
                         <MessageIcon />
                       </div>
                       <p>{userData?.email}</p>
@@ -137,7 +137,7 @@ export const SinglePage = () => {
                 <label htmlFor="comment">
                   <textarea
                     onChange={(e) => setInput(e.target.value)}
-                    className="bg-chefs-hat text-wood-charcoal h-[200px] w-full resize-none rounded-lg p-6 text-sm font-normal outline-none"
+                    className="h-[200px] w-full resize-none rounded-lg bg-chefs-hat p-6 text-sm font-normal text-wood-charcoal outline-none"
                     name="comment"
                     id="comment"
                     value={input}

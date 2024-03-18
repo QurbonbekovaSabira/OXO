@@ -5,10 +5,11 @@ import { ProductCard } from "../../components/product-card";
 export const SortPage = () => {
   const { id } = useParams();
   const { data } = useGetAllUserDatas(id);
+  console.log(data);
   return (
     <section className="py-12">
       <div className="container flex items-center gap-5">
-        {data?.data?.map((item) => (
+        {data?.map((item) => (
           <ProductCard key={item.id} {...item} />
         ))}
       </div>

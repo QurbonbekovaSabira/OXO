@@ -1,6 +1,6 @@
 import React from "react";
 import { useGetCategory } from "../../redux/service/useGetCategory";
-import { CategoryCard } from "./components/category-card/category-card";
+import { CategoryCard } from "../../components/category-card";
 import { useGetAllData } from "./service/query/useGetAllData";
 import { ProductCard } from "../../components/product-card/product-card";
 export const Home = () => {
@@ -18,7 +18,11 @@ export const Home = () => {
           </h2>
           <div className="flex flex-wrap items-center gap-9">
             {data?.map((item) => (
-              <CategoryCard key={item.id} {...item} />
+              <CategoryCard
+                key={item.id}
+                product={item}
+                to={`/brand/${item.dataKey}`}
+              />
             ))}
           </div>
         </div>

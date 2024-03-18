@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-export const CategoryCard = (product) => {
+export const CategoryCard = ({ product, to }) => {
   return (
-    <Link to={`/brand/${product.dataKey}`}>
+    <Link to={to}>
       <div className="flex flex-col items-center justify-center gap-4">
         <div>
           <img src={product?.img} alt="" />

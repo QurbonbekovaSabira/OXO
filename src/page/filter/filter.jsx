@@ -21,10 +21,10 @@ export const Filter = () => {
   );
   return (
     <>
-      <section className="bg-cascading-white pt-12">
+      <section className="bg-cascading-white pb-8 pt-12">
         <div className="container">
           <h2 className="mb-4 text-2xl font-semibold">Filtrlar</h2>
-          <div className="flex items-center gap-4">
+          <div className=" flex items-center gap-4">
             <div>
               <p className="font-sm mb-2 font-normal">Turi</p>
               <div>
