@@ -6,11 +6,12 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { SearchInput } from "./components/search-input/search-input";
 import { useLocation } from "react-router-dom";
+import Cookies from "js-cookie";
 export const Header = () => {
   const { user } = useSelector((state) => state);
   const like = useSelector((state) => state.like);
   const location = useLocation();
-  console.log(location.pathname);
+  const token = Cookies.get("user");
 
   return (
     <>
@@ -49,7 +50,7 @@ export const Header = () => {
                 </Link>
               )}
 
-              {!user.user.length > 0 ? (
+              {!token ? (
                 <Link to={"/login"}>
                   <div className="flex items-center gap-2">
                     <ProfileIcon />
