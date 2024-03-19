@@ -67,7 +67,7 @@ export const Profile = () => {
                   className="w-full"
                   error={errors.ticketLink}
                   id={"0"}
-                  type={"url"}
+                  type={"text"}
                   label={"Surat yuklash"}
                   {...register("ticketLink")}
                 />

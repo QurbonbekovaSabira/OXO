@@ -8,7 +8,7 @@ import { SearchInput } from "./components/search-input/search-input";
 import { useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
 export const Header = () => {
-  const { user } = useSelector((state) => state);
+  // const { user } = useSelector((state) => state);
   const like = useSelector((state) => state.like);
   const location = useLocation();
   const token = Cookies.get("user");
@@ -72,7 +72,7 @@ export const Header = () => {
               </select>
               <Link
                 to={"/user/create"}
-                className={`rounded-lg  px-4 py-2 text-base font-medium text-white ${user.user[0] ? "bg-primary" : "disabled:bg-[#0000009b]"}`}
+                className={`rounded-lg  px-4 py-2 text-base font-medium text-white ${token ? "bg-primary" : "cursor-not-allowed bg-[#0000009b]"}`}
               >
                 E'lonlarni joylashtirish
               </Link>

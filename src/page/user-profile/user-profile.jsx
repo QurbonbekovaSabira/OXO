@@ -3,7 +3,6 @@ import { useGetCategory } from "../../redux/service/useGetCategory";
 import { CategoryCard } from "../../components/category-card";
 export const UserProfile = () => {
   const { data } = useGetCategory();
-  console.log(data);
   return (
     <section className="pb-14 pt-8">
       <div className="container">

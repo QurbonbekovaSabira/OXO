@@ -7,7 +7,7 @@ export const validationProductData = z.object({
     .string()
     .min(80, { message: "Tavsiv 80 harfdan kam" })
     .max(9000, { message: "Harflar 9000 dan ko'p" }),
-  location: z.string().min(5, { message: "min 4" }),
+  location: z.string().min(5, { message: "min 5" }),
   clientName: z.string().min(2, { message: "min 4" }),
   email: z
     .string()

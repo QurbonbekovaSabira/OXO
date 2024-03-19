@@ -1,6 +1,13 @@
 import React from "react";
 import clsx from "clsx";
-export const Button = ({ children, type, variant, className, onClick }) => {
+export const Button = ({
+  children,
+  type,
+  variant,
+  className,
+  onClick,
+  beforIcon: Icon,
+}) => {
   return (
     <button
       onClick={onClick}
@@ -18,6 +25,7 @@ export const Button = ({ children, type, variant, className, onClick }) => {
         className,
       )}
     >
+      {Icon && <Icon />}
       {children}
     </button>
   );

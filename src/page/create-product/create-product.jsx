@@ -98,7 +98,7 @@ export const CreateProduct = () => {
               </Listbox>
             </div>
             <div className="mb-6">
-              <Listbox value={selected} onChange={setBrandName}>
+              <Listbox value={brandName} onChange={setBrandName}>
                 <div className="relative mt-1">
                   <Listbox.Button className="relative w-full  cursor-default rounded-sm border border-placebo bg-cascading-white py-2 pl-3 pr-10 text-left  sm:text-sm">
                     <div className="flex w-full items-center justify-between">
@@ -125,16 +125,16 @@ export const CreateProduct = () => {
                           }
                           value={person.brand}
                         >
-                          {({ selected }) => (
+                          {({ brandName }) => (
                             <>
                               <span
                                 className={`block truncate ${
-                                  selected ? "font-medium" : "font-normal"
+                                  brandName ? "font-medium" : "font-normal"
                                 }`}
                               >
                                 {person.brand}
                               </span>
-                              {selected ? (
+                              {brandName ? (
                                 <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"></span>
                               ) : null}
                             </>
@@ -210,7 +210,7 @@ export const CreateProduct = () => {
           </div>
           <div className="flex justify-end">
             <Button
-              type={"submit"}
+              type="submit"
               variant="primary"
               className={"w-[20%] py-[19px]"}
             >
